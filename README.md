@@ -36,9 +36,9 @@ Dash could probably install via the generated .tgz file in release/
 
 ## Troubleshooting
 
-The build.sh scripts calls python2 - so you might want to have that symlink working.
+The build.sh scripts calls python3 - so you might want to have that symlink working.
 
-If your mkdocs.yml uses the deprecated notation for toc update, use the Matts original bin/yaml2sqlite.py script.
+If your mkdocs.yml uses the deprecated notation for toc update, use the Matts original bin/yaml2sqlite.py (with python2).
 
 ```
 - pages:
