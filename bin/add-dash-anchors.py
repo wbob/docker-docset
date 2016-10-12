@@ -8,7 +8,7 @@ import argparse
 import os
 import re
 import sys
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 parser = argparse.ArgumentParser()
 parser.add_argument('filename',
@@ -19,7 +19,7 @@ parser.add_argument('-v', '--verbose',
 args = parser.parse_args()
 
 if not os.path.isfile(args.filename):
-    print 'Error: File %s does not exist' % args.path
+    print('Error: File %s does not exist' % args.path)
     sys.exit
 
 html = open(args.filename).read()
@@ -31,7 +31,7 @@ def dashrepl(match):
     dashname = name
     dashname = re.sub('<.*?>', '', dashname)
     dashname = re.sub('[^a-zA-Z0-9\.\(\)\?\',:; ]', '-', dashname)
-    dashname = urllib.quote(dashname)
+    dashname = urllib.parse.quote(dashname)
 
     dash = ('<a name="//apple_ref/cpp/Section/%s" class="dashAnchor"></a>' %
             (dashname))
@@ -44,5 +44,5 @@ with open(args.filename, 'w') as f:
     f.write(html)
 
 if args.verbose:
-    print 'Added dash docs anchors to %s' % args.filename
+    print('Added dash docs anchors to %s' % args.filename)
 

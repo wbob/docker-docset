@@ -31,7 +31,7 @@ if args.vverbose:
     args.verbose = True
 
 if not os.path.isdir(args.path):
-    print 'Error: Directory %s does not exist' % args.path
+    print('Error: Directory %s does not exist' % args.path)
     sys.exit
 
 
@@ -49,15 +49,15 @@ def abs2rel(link):
         newlink = link
 
     if args.vverbose:
-        print '(abs2rel) old link: %s' % link
-        print '(abs2rel) new link: %s' % newlink
-        print
+        print('(abs2rel) old link: %s' % link)
+        print('(abs2rel) new link: %s' % newlink)
+        print()
 
     return newlink
 
 
 if args.verbose:
-    print 'Replacing absolute links with relative links'
+    print('Replacing absolute links with relative links')
 
 for root, dirs, files in os.walk(args.path):
     for file in files:
@@ -65,12 +65,12 @@ for root, dirs, files in os.walk(args.path):
             page = open(os.path.join(root, file)).read()
 
             if args.verbose:
-                print 'file: %s/%s' % (root, file)
+                print('file: %s/%s' % (root, file))
 
             html = lxml.html.fromstring(page)
             html.rewrite_links(abs2rel)
 
             # Write the updated links back to the file
-            with open(os.path.join(root, file), 'w') as f:
+            with open(os.path.join(root, file), 'wb') as f:
                 f.write(lxml.html.tostring(html))
 

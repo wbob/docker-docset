@@ -24,7 +24,7 @@ parser.add_argument('-v', '--verbose',
 args = parser.parse_args()
 
 if not os.path.isfile(args.yaml):
-    print 'Error: Directory %s does not exist' % args.path
+    print('Error: Directory %s does not exist' % args.path)
     sys.exit
 
 # Set up db
@@ -58,8 +58,10 @@ with open(args.yaml) as f:
 
 if rawyaml:
     prevtitle = ''
-    for page in yaml.load(rawyaml).get('pages'):
-        mdpath, title = page[0], ' - '.join(page[1:])
+    pages = yaml.load(rawyaml).get('pages')
+    for page in pages:
+        title = list(page.keys())[0]
+        mdpath = list(page.values())[0]
         if '**HIDDEN**' not in title:
             if 'index.md' in mdpath:
                 htmlpath = mdpath.replace('index.md', 'index.html')
@@ -82,11 +84,11 @@ if rawyaml:
             db.commit()
 
             if args.verbose:
-                print "Added the following entry to %s:" % args.sqlite
-                print "    name: %s" % title
-                print "    type: %s" % 'Guide'
-                print "    path: %s" % htmlpath
-                print
+                print("Added the following entry to %s:" % args.sqlite)
+                print("    name: %s" % title)
+                print("    type: %s" % 'Guide')
+                print("    path: %s" % htmlpath)
+                print()
 
 db.close()
 
