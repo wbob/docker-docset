@@ -12,11 +12,15 @@ Thanks to Matt for providing an alternative.
 
 # Setup
 
+## Requirements
+
+python-lxml and python-yaml
+
 Place your mkdocs.yml file and docs/ folder in the basedir of the Repo.
 
 ## Customize
 
-You might want to change the logos in assets/
+You might want to change the logos in assets/ and copy over custom css from assets/ to docs/
 
 Edit DOCSET_NAME in build.sh to your desired name. Check if the cleanup "rm -rf" fit your editing needs.
 
@@ -74,5 +78,5 @@ $ cat css/docset.css
 
 As I read into the Issues of MkDocs, this Link came up:
 
-    - [mkdocs-pandoc](https://github.com/jgrassler/mkdocs-pandoc): Maybe there's a simpler build pipeline waiting for you
+* [mkdocs-pandoc](https://github.com/jgrassler/mkdocs-pandoc): Maybe there's a simpler build pipeline waiting for you
 

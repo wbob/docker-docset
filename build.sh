@@ -26,7 +26,7 @@ cp assets/docset/icon.png release/"$DOCSET_NAME".docset/icon.png
 cp assets/docset/Info.plist release/"$DOCSET_NAME".docset/Contents/Info.plist
 
 # Create tgz package
-tar -cvzf "$DOCSET_NAME".tgz release/"$DOCSET_NAME".docset
+tar --exclude='.DS_Store' -cvzf "$DOCSET_NAME".tgz release/"$DOCSET_NAME".docset
 
 # Optionally, copy Docset to Zeal directory and clear prior copy
 rm -rf ~/.local/share/Zeal/Zeal/docsets/"$DOCSET_NAME".docset/
