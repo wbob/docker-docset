@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 Reads an MkDocs YAML file and generates a Docset SQLite3 index from the
