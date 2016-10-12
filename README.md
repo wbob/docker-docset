@@ -1,10 +1,10 @@
 # MkDocs to Docset
 
-This is forked from Matt Wers unofficial docker-docs to Docset [Repo](https://github.com/MWers/docker-docset/).
+This is forked from Matt Walkers unofficial docker-docs to Docset [Repo](https://github.com/MWers/docker-docset/).
 
 I searched for a straightforward way to convert a MkDocs folder to Docset and found this in his Python and extracted build.sh scripts from its Dockerfile.
 
-Preliminary I was out of luck with [doc2dash](https://github.com/hynek/doc2dash) going the Markdown->Sphinx->Docset route. Even if you pin remarkcommon Version via pip(0.5.4), you will run into the problem of Sphinx not including .md files from the mkdocs.yml Table of Contents. Or so it seemed.
+I was out of luck with [doc2dash](https://github.com/hynek/doc2dash) going the Markdown->Sphinx->Docset route. Even if you pin remarkcommon Version via pip(0.5.4), you will run into the problem of Sphinx not including .md files from the mkdocs.yml Table of Contents. Or so it seemed. But you can get there, only the TOC was lacking.
 
 Thanks to Matt for providing an alternative.
 
