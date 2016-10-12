@@ -1,0 +1,11 @@
+site_name: devdocs
+theme: readthedocs
+pages:
+  - First Day: firstday.md
+  - Local Development: localdev.md
+  - Vagrant PHP-Versions: vagrant-trusty-multiple-php.md
+  - Vagrant Elasticsearch: vagrant-elasticsearch.md
+# optional if exporting from mkdocs to docset
+use_directory_urls: false
+extra_css:
+   - css/docset.css
