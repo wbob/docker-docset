@@ -16,7 +16,9 @@ Place your mkdocs.yml file and docs/ folder in the basedir of the Repo.
 
 ## Customize
 
-You might want to change the logos in assets/icon.png
+You might want to change the logos in assets/icon.png.
+
+Edit the first line in build.sh for DOCSET_NAME to your chosen name.
 
 ## Build Docset
 
@@ -32,7 +34,7 @@ For Zeal users:
 cp -R release/*.docset/ ~/.local/share/Zeal/Zeal/docsets/
 ```
 
-Dash could probably install via the generated .tgz file in release/
+Dash could probably install via the generated .tgz file
 
 ## Troubleshooting
 
@@ -67,3 +69,9 @@ $ cat css/docset.css
 .wy-nav-side { display: none; }
 .rst-versions { display: none; }
 ```
+
+# Links
+
+As I read into the Issues of MkDocs, this Link came up:
+
+    - [mkdocs-pandoc](https://github.com/jgrassler/mkdocs-pandoc): Maybe there's a simpler build pipeline waiting for you
